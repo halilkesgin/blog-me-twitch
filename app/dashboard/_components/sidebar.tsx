@@ -16,7 +16,7 @@ const routes = [
     {
         label: "Blogs",
         icon: Book,
-        href: "/blogs"
+        href: "/dashboard/blogs"
     }
 ]
 
@@ -41,7 +41,11 @@ export const Sidebar = () => {
                             variant="ghost"
                             asChild
                             className={cn(
-                                pathname === route.href && "bg-accent"
+                                (
+                                    pathname === route.href || 
+                                    pathname.startsWith("/dashboard/blogs")
+
+                                ) && "bg-accent"
                             )}
                         >
                             <Link
